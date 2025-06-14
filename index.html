@@ -150,8 +150,31 @@ npm run dev
 <li>Content-Type: application/json</li>
 </ul>
 </li>
-<li><strong>Body: Zoom Manifest API Json Ojbect</strong></li>
 </ul>
+<h2 is-upgraded><strong>Body: Zoom Manifest API Json Ojbect</strong></h2>
+<h3 is-upgraded>Start your Ngrok (reverse proxy)</h3>
+<p>Zoom Apps do not support localhost, and must be served over https. To develop locally, you need to tunnel traffic to this application via https, because the application runs in Docker containers serving traffic from http://localhost. You can use Ngrok to do this. Once installed you may run this command from your terminal:</p>
+<pre><code language="language-bash" class="language-bash">ngrok http 3000
+</code></pre>
+<p>Ngrok will output the origin it has created for your tunnel, eg https://9a20-38-99-100-7.ngrok.io. You&#39;ll need to use this across your Zoom App configuration in the Zoom Marketplace (web) build flow (see below).</p>
+<p>Please copy the HTTPS origin from the ngrok terminal output and paste the value in the following property fields:</p>
+<ul>
+<li>Basic Information page <ul>
+<li>development_redirect_uri</li>
+<li>oauth_allow_list</li>
+</ul>
+</li>
+<li>Surface page: <ul>
+<li>development_home_uri</li>
+<li>domain_allow_list</li>
+</ul>
+</li>
+<li>Access page: <ul>
+<li>development_webhook_url</li>
+</ul>
+</li>
+</ul>
+<p>PUBLIC_URL value in the .env file</p>
 <pre><code language="language-javascript" class="language-javascript">{
     &#34;manifest&#34;: {
         &#34;display_information&#34;: {
