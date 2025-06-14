@@ -107,7 +107,52 @@ npm run dev
       </google-codelab-step>
     
       <google-codelab-step label="Example Marketplace RTMS-enabled app Manifest JSON Object (Optional)" duration="0">
-        <h2 is-upgraded>Zoom Manifest API Json Ojbect</h2>
+        <h2 is-upgraded>Create a Zoom General User-level OAuth app</h2>
+<p>In this section, you will create a user-managed Zoom App Marketplace general app and configure it with Zoom App and Team Chatbot features.</p>
+<h2 is-upgraded>Create your App: How to Create and Configure a Zoom App (User-Managed) with the Manifest API</h2>
+<ol type="1">
+<li>Visit the Zoom App Marketplace<ul>
+<li>Navigate to the <a href="https://marketplace.zoom.us/" target="_blank">Zoom App Marketplace</a> and select General App.</li>
+</ul>
+</li>
+<li>Start Building a New App<ul>
+<li>Click the &#34;Develop&#34; dropdown in the top-right.</li>
+<li>Select &#34;Build App&#34;.</li>
+</ul>
+</li>
+<li>Choose App Type:<ul>
+<li>When prompted to choose an app type, select &#34;General App&#34; unless you have a specific use case.</li>
+<li>Click &#34;Create&#34;.</li>
+</ul>
+</li>
+<li>Choose App Management Type<ul>
+<li>Select User-managed App. This allows individual users to install and authorize your app to access their Zoom data — similar to apps accessing a user&#39;s Google Drive or Gmail</li>
+</ul>
+</li>
+<li>Configure Basic App Information<ul>
+<li>On the &#34;Basic Information&#34; page:</li>
+<li>Scroll down to the Redirect URL for OAuth section. For testing with Postman, add the Postman redirect URI:</li>
+</ul>
+</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">https://oauth.pstmn.io/v1/callback
+
+</code></pre>
+<ol type="1" start="6">
+<li>Get App ID from URL: <img alt="App ID" src="img/5894b1561e50b78c.png"></li>
+<li>Make a PATCH request to update the app (test with Postman). After configuring the app, test it by sending a PATCH request to Zoom&#39;s API to update your app metadata or description.</li>
+</ol>
+<ul>
+<li><strong>Method:</strong> PATCH</li>
+<li><strong>URL:</strong> https://api.zoom.us/v2/marketplace/apps/&lt;APP_ID&gt;</li>
+<li><strong>Headers:</strong><ul>
+<li>Authorization: Bearer &lt;YOUR_ACCESS_TOKEN&gt;</li>
+<li>Content-Type: application/json</li>
+</ul>
+</li>
+<li><strong>Body:</strong></li>
+</ul>
+<p><strong>Zoom Manifest API Json Ojbect</strong></p>
 <pre><code language="language-javascript" class="language-javascript">{
     &#34;manifest&#34;: {
         &#34;display_information&#34;: {
