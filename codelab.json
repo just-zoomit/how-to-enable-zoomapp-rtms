@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2025-06-16T05:11:28-04:00",
+  "updated": "2025-06-16T05:37:46-04:00",
   "id": "how-to-enable-zoom-app-rtms",
   "duration": 0,
   "title": "Enable Zoom App Real Time Media Streams: RTMS-enabled app",
   "authors": "Donte",
   "summary": "How to enable Zoom Apps Real Time Media Stream",
-  "source": "11_enable-zoom-app-rtms.md",
+  "source": "30_enable-zoom-app-rtms.md",
   "theme": "",
   "status": [
     "published"
